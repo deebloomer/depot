@@ -1,4 +1,6 @@
 Depot::Application.routes.draw do
+  get "users/new"
+
   resources :orders
 
   resources :line_items
@@ -8,6 +10,7 @@ Depot::Application.routes.draw do
   get "store/index"
 
   resources :products
+  resources :users    #dee
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

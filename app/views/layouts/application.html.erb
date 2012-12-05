@@ -13,15 +13,20 @@
   <%= image_tag("logo.png") %>
   <%= @page_title || "Pragmatic Bookshelf" %>
 </div>
+
 <div id="columns">
   <div id="side">
+
     <!-- START_HIGHLIGHT -->
-    <div id="cart">
+
+    <div id="cart">       <!--dee IF WE DELETE THIS LINE AND NEXT TWO ERROR IS GONE, SO SOME fix needed here-->
       <%= render @cart %>
     </div>
 
+
     <!-- END_HIGHLIGHT -->
     <ul id="links">
+      <%= link_to "Create User", new_user_path %>      <!--dee-->
       <li><a href="http://www....">Home</a></li>
       <li><a href="http://www..../faq">Questions</a></li>
       <li><a href="http://www..../news">News</a></li>
