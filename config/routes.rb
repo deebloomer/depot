@@ -11,6 +11,11 @@ Depot::Application.routes.draw do
 
   resources :products
   resources :users    #dee
+  resources :sessions #dee
+
+  match '/your_cart' => "carts#your_cart", :as => "your_cart"  #dee
+  match '/login' => "sessions#new", :as => "login"       #dee
+  match '/logout' => "sessions#destroy", :as => "logout"     #dee
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

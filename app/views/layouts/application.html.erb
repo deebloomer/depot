@@ -19,23 +19,41 @@
 
     <!-- START_HIGHLIGHT -->
 
-    <div id="cart">       <!--dee IF WE DELETE THIS LINE AND NEXT TWO ERROR IS GONE, SO SOME fix needed here-->
-      <%= render @cart %>
+    <div id="cart">      <!--dee IF WE DELETE THIS LINE AND NEXT TWO ERROR IS GONE, SO SOME fix needed here-->
+    <%=render @carts      %>
     </div>
+
 
 
     <!-- END_HIGHLIGHT -->
     <ul id="links">
-      <%= link_to "Create User", new_user_path %>      <!--dee-->
+      <%= link_to "Create User", new_user_path %>  <!--dee-->
+      <%= link_to "Your Cart", :controller => "carts", :action => "your_cart" %>  <!--dee-->
       <li><a href="http://www....">Home</a></li>
       <li><a href="http://www..../faq">Questions</a></li>
       <li><a href="http://www..../news">News</a></li>
       <li><a href="http://www..../contact">Contact</a></li>
+      <%= link_to "Logout", logout_path %>              <!--dee-->
+      <%= link_to "Login", login_path %>                 <!--dee-->
     </ul>
   </div>
   <div id="main">
     <%= yield %>
   </div>
 </div>
+
+<div id='header'>
+  <% if logged_in? %>
+      <%= current_user.email %>
+      <%= link_to "Logout", logout_path %>
+
+      <%= link_to "Create User", new_user_path %>
+
+  <% else %>
+      <%= link_to "Login", login_path %>
+  <% end %>
+</div>      <!--dee-->
+
+
 </body>
 </html>

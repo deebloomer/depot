@@ -40,7 +40,7 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-    @product = Product.new(params[:product])
+    @product = current_user.product.new(params[:product])   #dee current_user.p
 
     respond_to do |format|
       if @product.save
@@ -81,4 +81,6 @@ class ProductsController < ApplicationController
     end
 
   end
+  before_filter :authenticate, :except => [:index, :show]     #dee
+
 end

@@ -34,5 +34,5 @@ class CombineItemsInCart < ActiveRecord::Migration
       end
     end
   end
-end
+end       #dee tut 3 part 33 different
 

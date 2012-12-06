@@ -26,6 +26,9 @@ class CartsController < ApplicationController
     end
   end
 
+  def your_cart
+    redirect_to :action => "show", :id => current_cart.id   #dee
+  end
   # GET /carts/new
   # GET /carts/new.json
   def new
