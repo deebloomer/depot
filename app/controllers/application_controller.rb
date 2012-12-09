@@ -35,4 +35,14 @@ class ApplicationController < ActionController::Base
     session[:cart_id] = cart.id
     cart
   end
+
+  helper_method :is_admin?
+  def is_admin?
+    if current_user and (current_user.admin == true)
+      return true
+    else
+      access_denied
+    end
+  end
+
 end

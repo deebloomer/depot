@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+
+
   def new
     @user = User.new
   end
@@ -10,6 +12,9 @@ creation successful!'
     else
       render :action => 'new'
     end
+  end
+  def index
+    @users = User.all
   end
 
 end
